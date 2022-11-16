@@ -29,17 +29,26 @@ lazy val root = project
   .settings(
     libraryDependencies ++= Seq(
       // https://laminar.dev/ https://github.com/raquo/Laminar/tags
-      "com.raquo" %%% "laminar" % "0.14.2",
-      // https://github.com/kitlangton/animus https://github.com/kitlangton/animus/releases
-      "io.github.kitlangton" %%% "animus" % "0.2.2",
+      "com.raquo" %%% "laminar" % "0.14.5",
       // https://github.com/raquo/Waypoint https://github.com/raquo/Waypoint/tags
       "com.raquo" %%% "waypoint" % "0.5.0",
+      // https://github.com/kitlangton/animus https://github.com/kitlangton/animus/releases
+      "io.github.kitlangton" %%% "animus" % "0.2.2",
       // https://github.com/cquiroz/scala-java-time https://github.com/cquiroz/scala-java-time/tags
       "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
+      // https://github.com/sherpal/LaminarSAPUI5Bindings https://mvnrepository.com/artifact/be.doeraene/web-components-ui5
+      "be.doeraene" %%% "web-components-ui5" % "1.8.0",
       // https://github.com/softwaremill/sttp https://github.com/softwaremill/sttp/releases
       "com.softwaremill.sttp.client3" %%% "core" % "3.8.3",
       // https://github.com/zio/zio-json https://github.com/zio/zio-json/releases
       "dev.zio" %%% "zio-json" % "0.3.0"
+    )
+  )
+  .settings(
+    stIgnore := List(
+      "@ui5/webcomponents",
+      "@ui5/webcomponents-fiori",
+      "@ui5/webcomponents-icons"
     )
   )
   .settings(
@@ -48,6 +57,7 @@ lazy val root = project
       _.withModuleKind(ModuleKind.ESModule)
         .withModuleSplitStyle(ModuleSplitStyle.SmallModulesFor(List("$package$")))
     },
+    scalaJSLinkerConfig ~= { _.withSourceMap(false) },
     externalNpm := {
       baseDirectory.value
     },
