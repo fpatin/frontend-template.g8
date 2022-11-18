@@ -19,7 +19,10 @@ Use Vite to run the dev server
 ```shell
 npm run dev
 ```
-
+In a `sbt` shell, automatically build your code
+```sbt
+~publicDev
+```
 ## Build
 ```shell
 npm run build
