@@ -35,13 +35,13 @@ lazy val root = project
       // https://github.com/kitlangton/animus https://github.com/kitlangton/animus/releases
       "io.github.kitlangton" %%% "animus" % "0.2.2",
       // https://github.com/cquiroz/scala-java-time https://github.com/cquiroz/scala-java-time/tags
-      "io.github.cquiroz" %%% "scala-java-time" % "2.4.0",
+      "io.github.cquiroz" %%% "scala-java-time" % "2.5.0",
       // https://github.com/sherpal/LaminarSAPUI5Bindings https://mvnrepository.com/artifact/be.doeraene/web-components-ui5
       "be.doeraene" %%% "web-components-ui5" % "1.8.0",
       // https://github.com/softwaremill/sttp https://github.com/softwaremill/sttp/releases
-      "com.softwaremill.sttp.client3" %%% "core" % "3.8.3",
+      "com.softwaremill.sttp.client3" %%% "core" % "3.8.5",
       // https://github.com/zio/zio-json https://github.com/zio/zio-json/releases
-      "dev.zio" %%% "zio-json" % "0.3.0"
+      "dev.zio" %%% "zio-json" % "0.4.2"
     )
   )
   .settings(
